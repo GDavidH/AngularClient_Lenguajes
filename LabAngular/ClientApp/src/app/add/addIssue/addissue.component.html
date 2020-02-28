@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+<body>
+  <h1>{{title}}</h1>
+  <h3>Issue</h3>
+  <hr />
+  <form [formGroup]="issueForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    
+    <div class="form-group row">
+        <div class="col-md-4">
+         <input class="form-control" type="text" formControlName="Id" hidden>
+        </div>
+
+        <label class=" control-label col-md-12" for="Name">Description</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="Description">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Description') && formDir.submitted">
+          Description is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">Address</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="Address">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Address') && formDir.submitted">
+          Address is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">ContactPhone</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="ContactPhone">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'ContactPhone') && formDir.submitted">
+          Contact Phone is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">ContactEmail</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="ContactEmail">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'ContactEmail') && formDir.submitted">
+          Contact Email is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">Status</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="Status">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Status') && formDir.submitted">
+          Status is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">IdClient</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="IdClient">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'IdClient') && formDir.submitted">
+          IdClient is required.
+        </span>
+      </div>
+
+      <div class="form-group row">
+        <label class=" control-label col-md-12" for="Age">Service</label>
+        <div class="col-md-4">
+          <input class="form-control" type="text" formControlName="Service">
+        </div>
+        <span class="text-danger" *ngIf="issueForm.hasError('required', 'Service') && formDir.submitted">
+          Service is required.
+        </span>
+      </div>
+
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Save</button>
+        <button class="btn" (click)="cancel()">Cancel</button>
+      </div>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Comment</title>
+</head>
+<body>
+  <p *ngIf="!commentList"><em> Loading....</em> </p>
+  <p>
+    <!--<a [routerLink]="['/register-issue']"> Create new </a>-->
+  </p>
+  <h2> Comment </h2>
+  <table class='table' *ngIf="commentList">
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>IdIssue</th>
+        <th>Description</th>
+        <th>Coment Timestamp</th>
+
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let comment of commentList">
+        <td>{{ comment.Id  }}</td>
+        <td>{{ comment.IdIssue  }}</td>
+        <td>{{ comment.Description  }}</td>
+        <td>{{ comment.ComentTimestamp  }}</td>
+
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

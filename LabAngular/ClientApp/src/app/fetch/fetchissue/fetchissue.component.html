@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+  <p *ngIf="!issueList"><em> Loading....</em> </p>
+  <p>
+    <a [routerLink]="['/register-issue']"> Create new </a>
+  </p>
+  <table class='table' *ngIf="issueList">
+
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>RegisterTimestamp</th>
+        <th>Address</th>
+        <th>Contact Phone</th>
+        <th>Contact Email</th>
+        <th>Status</th>
+        <th>Support User Assigned</th>
+        <th>Id Client</th>
+        <th>Service</th>
+        <th>Action</th>
+        <th>Comment</th>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issueList">
+        <td>{{ issue.Id  }}</td>
+        <td>{{ issue.Description  }}</td>
+        <td>{{ issue.RegisterTimestamp  }}</td>
+        <td>{{ issue.Address  }}</td>
+        <td>{{ issue.ContactPhone  }}</td>
+        <td>{{ issue.ContactEmail  }}</td>
+        <td>{{ issue.Status  }}</td>
+        <td>{{ issue.SupportUserItem  }}</td>
+        <td>{{ issue.IdClient  }}</td>
+        <td>{{ issue.Service  }}</td>
+
+        <td>
+          <a [routerLink]="['/issue/', issue.Id]"> Edit </a>
+          <a [routerLink]="" (click)="delete(issue.Id)"> Delete </a>
+        </td>
+        <td>
+          <a [routerLink]="['/register-comment']"> New </a>
+          <a [routerLink]="['/fetch-comment']"> fetch </a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
